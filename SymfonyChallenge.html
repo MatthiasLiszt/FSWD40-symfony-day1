@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>Symfony 4.0: Symfony | Day 1 | Challenge</title>
+    <link rel="shortcut icon" href="//lms.codefactory.wien/pluginfile.php/1/theme_customtotararesponsive/favicon/1523912099/codefactory-vienna-s-r.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Totara, Symfony 4.0: Symfony | Day 1 | Challenge" />
+<link rel="stylesheet" type="text/css" href="https://lms.codefactory.wien/theme/yui_combo.php?3.17.2/cssreset/cssreset-min.css&amp;3.17.2/cssfonts/cssfonts-min.css&amp;3.17.2/cssgrids/cssgrids-min.css&amp;3.17.2/cssbase/cssbase-min.css" /><link rel="stylesheet" type="text/css" href="https://lms.codefactory.wien/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://lms.codefactory.wien/theme/styles.php/customtotararesponsive/1523912099/all" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/lms.codefactory.wien","sesskey":"B6XgvhYYhu","loadingicon":"https:\/\/lms.codefactory.wien\/theme\/image.php\/customtotararesponsive\/core\/1523912099\/i\/loading_small","themerev":"1523912099","slasharguments":1,"theme":"customtotararesponsive","jsrev":"1502183339","admin":"admin","svgicons":true};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''};if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else me.path=component+'/'+component+'.'+me.type};
+YUI_config = {"debug":false,"base":"https:\/\/lms.codefactory.wien\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/lms.codefactory.wien\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/lms.codefactory.wien\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/lms.codefactory.wien\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/lms.codefactory.wien\/theme\/yui_combo.php?m\/1502183339\/","combine":true,"comboBase":"https:\/\/lms.codefactory.wien\/theme\/yui_combo.php?","ext":false,"root":"m\/1502183339\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-formchangechecker":{"requires":["base","event-focus"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-jqueryajaxhandler":{"requires":["base"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-formautosubmit":{"requires":["base","event-key"]},"moodle-core-jquerybehat":{"requires":[]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core_availability-form":{"requires":["base","node","event","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-calendar-info":{"requires":["base","node","event-mouseenter","event-key","overlay","moodle-calendar-info-skin"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-toolboxes":{"requires":["node","base","event-key","node","io","moodle-course-coursebase","moodle-course-util"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-passwordunmask":{"requires":["node","base"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-core_message-messenger":{"requires":["escape","handlebars","io-base","moodle-core-notification-ajaxexception","moodle-core-notification-alert","moodle-core-notification-dialogue","moodle-core-notification-exception"]},"moodle-core_message-deletemessage":{"requires":["node","event"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_ddimageortext-form":{"requires":["moodle-qtype_ddimageortext-dd","form_filepicker"]},"moodle-qtype_ddimageortext-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_ddmarker-dd":{"requires":["node","event-resize","dd","dd-drop","dd-constrain","graphics"]},"moodle-qtype_ddmarker-form":{"requires":["moodle-qtype_ddmarker-dd","form_filepicker","graphics","escape"]},"moodle-qtype_ddwtos-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_facetoface-signupform":{"requires":["base","node","io-base","moodle-core-notification-dialogue","moodle-core-notification-alert"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-util":{"requires":["node"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-randomquestion":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-quizquestionbank":{"requires":["base","event","node","io","io-form","yui-later","moodle-question-qbankmanager","moodle-core-notification-dialogue"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-block_navigation-navigation":{"requires":["base","io-base","node","event-synthetic","event-delegate","json-parse"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-totara_program-categoryexpander":{"requires":["node","event-key"]},"moodle-totara_reportbuilder-graphicalreporting":{"requires":[]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["moodle-editor_atto-plugin","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/lms.codefactory.wien\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/lms.codefactory.wien\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1502183339\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/lms.codefactory.wien\/lib\/javascript.php\/1502183339\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker"]},"core_dndupload":{"name":"core_dndupload","fullpath":"https:\/\/lms.codefactory.wien\/lib\/javascript.php\/1502183339\/lib\/form\/dndupload.js","requires":["node","event","json","core_filepicker"]}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body  id="page-mod-page-view" class="format-weeks  path-mod path-mod-page safari dir-ltr lang-en yui-skin-sam yui3-skin-sam lms-codefactory-wien pagelayout-incourse course-101 context-2523 cmid-1713 category-25 has-region-side-pre empty-region-side-pre has-region-side-post empty-region-side-post content-only">
+
+<div class="skiplinks"><a class="skip" href="#maincontent">Skip to main content</a></div>
+<script type="text/javascript" src="https://lms.codefactory.wien/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js&amp;rollup/1502183339/mcore-min.js"></script><script type="text/javascript" src="https://lms.codefactory.wien/theme/jquery.php/core/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="https://lms.codefactory.wien/lib/javascript.php/1502183339/lib/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+<header role="banner" class="navbar">
+    <nav role="navigation" class="navbar-inner">
+        <div class="container-fluid">
+                            <div id="logo" class="custom img-responsive">
+                    <a href="https://lms.codefactory.wien">
+                        <img class="logo img-responsive" src="//lms.codefactory.wien/pluginfile.php/1/theme_customtotararesponsive/logo/1523912099/cf_logo.png" alt="Code Factory Academy logo" />
+                    </a>
+                </div>
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" href='#'>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="accesshide">Toggle navigation</span>
+            </a>
+            <div class="usermenu"><div id="action-menu-0" class="moodle-actionmenu nowrap-items" data-enhance="moodle-core-actionmenu"><ul id="action-menu-0-menubar" class="menubar" role="menubar"><li role="presentation"><a class="toggle-display textmenu" title="" id="action-menu-toggle-0" role="menuitem" href="#"><span class="userbutton"><span class="usertext">Matthias Liszt</span><span class="avatars"><span class="avatar current"><img src="https://lms.codefactory.wien/pluginfile.php/2323/user/icon/customtotararesponsive/f2?rev=3530" alt="Picture of Matthias Liszt" title="Picture of Matthias Liszt" class="userpicture" width="35" height="35" role="presentation" /></span></span></span><b class="caret"></b></a></li></ul><ul id="action-menu-0-menu" class="menu  align-tr-br" data-rel="menu-content" aria-labelledby="action-menu-toggle-0" role="menu" data-align="tr-br"><li role="presentation"><a class="icon menu-action" role="menuitem" href="https://lms.codefactory.wien/user/profile.php?id=110" aria-labelledby="actionmenuaction-1"><span aria-hidden="true" data-flex-icon="core|i/user"
+      class="flex-icon ft-fw ft fa-user"
+      ></span><span class="menu-action-text" id="actionmenuaction-1">Profile</span></a></li><li role="presentation"><span class="filler">&nbsp;</span></li><li role="presentation"><a class="icon menu-action" role="menuitem" href="https://lms.codefactory.wien/grade/report/overview/index.php" aria-labelledby="actionmenuaction-2"><span aria-hidden="true" data-flex-icon="core|t/grades"
+      class="flex-icon ft-fw ft ft-grades"
+      ></span><span class="menu-action-text" id="actionmenuaction-2">Grades</span></a></li><li role="presentation"><a class="icon menu-action" role="menuitem" href="https://lms.codefactory.wien/message/index.php" aria-labelledby="actionmenuaction-3"><span aria-hidden="true" data-flex-icon="core|t/message"
+      class="flex-icon ft-fw ft fa-comment"
+      ></span><span class="menu-action-text" id="actionmenuaction-3">Messages</span></a></li><li role="presentation"><a class="icon menu-action" role="menuitem" href="https://lms.codefactory.wien/user/preferences.php" aria-labelledby="actionmenuaction-4"><span aria-hidden="true" data-flex-icon="core|t/preferences"
+      class="flex-icon ft-fw ft fa-sliders"
+      ></span><span class="menu-action-text" id="actionmenuaction-4">Preferences</span></a></li><li role="presentation"><span class="filler">&nbsp;</span></li><li role="presentation"><a class="icon menu-action" role="menuitem" href="https://lms.codefactory.wien/mod/page/view.php?id=1713&amp;lang=de" aria-labelledby="actionmenuaction-5"><span class="menu-action-text" id="actionmenuaction-5">Deutsch ‎(de)‎</span></a></li><li role="presentation"><a class="icon menu-action" role="menuitem" href="https://lms.codefactory.wien/mod/page/view.php?id=1713&amp;lang=en" aria-labelledby="actionmenuaction-6"><span class="menu-action-text" id="actionmenuaction-6">English ‎(en)‎</span></a></li><li role="presentation"><span class="filler">&nbsp;</span></li><li role="presentation"><a class="icon menu-action" role="menuitem" href="https://lms.codefactory.wien/login/logout.php?sesskey=B6XgvhYYhu" aria-labelledby="actionmenuaction-7"><span aria-hidden="true" data-flex-icon="core|a/logout"
+      class="flex-icon ft-fw ft fa-sign-out"
+      ></span><span class="menu-action-text" id="actionmenuaction-7">Log out</span></a></li></ul></div></div>            <h1>Symfony v4.0</h1>                            <div id="totaramenu" class="nav-collapse collapse"><ul id="totaramenu">
+    <li class="menu-dashboard first">
+        <a target="_self" href="https://lms.codefactory.wien/totara/dashboard/index.php">Home</a>
+    </li><li class="menu-findlearning haschildren">
+        <a target="_self" href="https://lms.codefactory.wien/totara/coursecatalog/courses.php">Find Learning</a>
+            <ul>
+                <li class="menu-courses first">
+                    <a target="_self" href="https://lms.codefactory.wien/totara/coursecatalog/courses.php">Courses</a>
+                </li><li class="menu-programs">
+                    <a target="_self" href="https://lms.codefactory.wien/totara/coursecatalog/programs.php">Programs</a>
+                </li><li class="menu-certifications last">
+                    <a target="_self" href="https://lms.codefactory.wien/totara/coursecatalog/certifications.php">Certifications</a>
+                </li>
+            </ul>
+    </li><li class="menu-recordoflearning last">
+        <a target="_self" href="https://lms.codefactory.wien/totara/plan/record/index.php">Record of Learning</a>
+    </li>
+</ul></div>
+                    </div>
+    </nav>
+</header>
+
+<div id="page" class="container-fluid">
+    <header id="page-header" class="clearfix"><div class="clearfix" id="page-navbar"><div class="breadcrumb-nav"><span class="accesshide" id="navbar-label">Page path</span><nav aria-labelledby="navbar-label"><ul><li><a href="https://lms.codefactory.wien/totara/dashboard/index.php">Dashboard</a></li><li> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> <a href="https://lms.codefactory.wien/course/index.php?categoryid=25">Full Stack Web Development 4.0</a></li><li> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> <a title="Symfony v4.0" href="https://lms.codefactory.wien/course/view.php?id=101">Symfony 4.0</a></li><li> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> <span tabindex="0">Day 1 | Classwork</span></li><li> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> Symfony | Day 1 | Challenge</li></ul></nav></div><div class="breadcrumb-button"></div></div><div id="course-header"></div></header>
+    <div id="page-content" class="row-fluid">
+        <div id="region-main-box" class="span9">
+            <div class="row-fluid">
+                <section id="region-main" class="span8 span8 pull-right">
+                    <div role="main"><span id="maincontent"></span><h2>Symfony | Day 1 | Challenge</h2><div class="box generalbox center clearfix"><div class="no-overflow"><!-- LOAD SPECIFIC CSS START-->
+<script type="text/javascript">
+
+    (function () {
+        function loadCSS(url, callback) {
+
+            var cssLink = document.createElement("link");
+            
+            cssLink.type = "text/css";
+            cssLink.rel = "stylesheet";
+            cssLink.href = url;
+            
+            if (cssLink.readyState) { //IE
+                cssLink.onreadystatechange = function () {
+                    if (cssLink.readyState == "loaded" || cssLink.readyState == "complete") {
+                        cssLink.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            } else { //Others
+                cssLink.onload = function () {
+                    callback();
+                };
+            }
+            document.getElementsByTagName("head")[0].appendChild(cssLink);
+        }
+
+        // add your link here, it has to be https & css file
+        // TODO: exctract HTML5 related CSS from global in totara 
+        loadCSS("https://www.codefactory.academy/examples/fswd4/symfony/css/fswd40-symfony-challenge.css", function () {
+             console.log('css loaded');
+        });
+                
+
+    })();
+</script>
+<!-- LOAD SPECIFIC CSS END-->
+<div class="fswd40-symfony-challenge">
+    <h2 class="c35" id="h.hxpfl07zt53l"><span class="c59 c5">Challenge 1</span></h2>
+    <p class="c58"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 440.00px; height: 150.67px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image9.png" style="width: 440.00px; height: 150.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c58"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 350.67px; height: 350.67px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image3.png" style="width: 350.67px; height: 350.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c58 c21"><span class="c31 c6 c53"></span></p>
+    <p class="c52"><span class="c5 c6 c23">Table of contents:</span></p>
+    <p class="c44"><span class="c20"><a class="c33" href="#h.n4a32vcntfdq">Create a new Symfony Project</a></span></p>
+    <p class="c44"><span class="c20"><a class="c33" href="#h.pqxppdu420je">Localhost setup</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.asmfa4v6ki6z">Step 1</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.cy5tkr1hbie7">Step 2</a></span></p>
+    <p class="c44"><span class="c20"><a class="c33" href="#h.6f0qzje1g15f">Symfony Project: todolist</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.i8t995gib0io">Create a new Controller</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.hfhxx3cehshs">Layout implementation - Bootstrap</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.6p71grpvareo">Doctrine</a></span></p>
+    <p class="c11"><span class="c20"><a class="c33" href="#h.ir02ohv0wyci">Database create</a></span></p>
+    <p class="c11"><span class="c20"><a class="c33" href="#h.npe7si5dtfhq">Creating an Entity Class</a></span></p>
+    <p class="c11"><span class="c20"><a class="c33" href="#h.e2p2usuyeqgg">Creating the Database Tables/Schema</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.fdep69sgmbc1">Views</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.9spaj9d8z1br">Fetching data from the database</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.qab9wub1wnt9">Inserting data in the database</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.1dj22mokat3x">Details page</a></span></p>
+    <p class="c37"><span class="c20"><a class="c33" href="#h.i8h83lmds75a">Edit page</a></span></p>
+    <p class="c56"><span class="c20"><a class="c33" href="#h.g8tcwxyfzfn6">Delete action</a></span></p>
+    <h1 class="c47" id="h.jg2iu33qwbov"><span class="c31 c69 c6"></span></h1>
+    <h1 class="c34" id="h.n4a32vcntfdq"><span class="c25 c53 c6">Create a new Symfony Project</span></h1>
+    <p class="c12"><span class="c9 c5">As you know from the previous material, to generate a new Symfony project you need to navigate through the terminal (Command prompt) to C:\xampp\htdocs and then you need to type this command (in our case we will name our project “todolist”):</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.75a3076184a48537675159cc23c84cbbe2405797"></a><a id="t.0"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c10">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0">symfony </span><span class="c0 c4">new</span><span class="c0 c5 c6">&nbsp;todolist 3.4</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">When you run this command you will see a result as in the image below. This command will generate new Symfony project (folder) inside htdocs folder.</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 460.00px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image5.png" style="width: 624.00px; height: 460.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c12 c21"><span class="c16 c5"></span></p>
+    <p class="c12 c21"><span class="c16 c5"></span></p>
+    <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 472.00px; height: 65.33px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image2.png" style="width: 472.00px; height: 65.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c12 c21"><span class="c5 c16"></span></p>
+    <p class="c12"><span class="c9 c5">You have two ways of opening your project :</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <ol class="c18 lst-kix_jy811kd99zzt-0 start" start="1">
+        <li class="c12 c40"><span class="c9 c5">http:\\localhost\todolist\web\app_dev.php</span></li>
+        <li class="c12 c40"><span class="c9 c5">open the terminal or command prompt inside your project folder and run this code :</span></li>
+    </ol>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.938a3a726198cca421ba56b52dbdf43c0bc6ee4d"></a><a id="t.1"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c10">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c66"><span class="c0 c6">php bin/console server:</span><span class="c32 c67">run</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Now you can open your project folder in Sublime and we are ready to start our todolist app development in Symfony.</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 341.33px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image8.png" style="width: 624.00px; height: 341.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <h1 class="c34" id="h.6f0qzje1g15f"><span class="c5 c32 c51">Symfony Project: todolist</span></h1>
+    <h2 class="c34" id="h.i8t995gib0io"><span class="c25 c39 c6">Create a new Controller</span></h2>
+    <p class="c12"><span class="c9 c5">Go to the src folder and open AppBundle -&gt; Controller and create a new controller (file: TodoController.php) inside the &nbsp;Controller folder. Now you can open TodoController.php and insert this code inside it:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.49f5b66d27d89c6b4552fad2d3aae56daefc3fd2"></a><a id="t.2"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c62">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">&lt;?</span><span class="c0 c5 c6">php</span></p>
+                    <p class="c7"><span class="c0 c4">namespace</span><span class="c0">&nbsp;</span><span class="c0 c8">AppBundle</span><span class="c0 c5 c6">\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Sensio</span><span class="c0 c5 c6">\Bundle\FrameworkExtraBundle\Configuration\Route;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Bundle\FrameworkBundle\Controller\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\HttpFoundation\Request;</span></p>
+                    <p class="c7"><span class="c0 c4">class</span><span class="c0">&nbsp;</span><span class="c0 c8">TodoController</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c5 c8">Controller</span></p>
+                    <p class="c7"><span class="c0 c5 c6">{</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todos"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_list")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;listAction</span><span class="c0 c2">(</span><span class="c0 c8">Request</span><span class="c0 c5 c6">&nbsp;$request)</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; {</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/index.html.twig'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0 c5 c6">}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c63 c32">As you can see in TodoController.php we need to have index.html.twig view inside the todo folder which you need to create, so let’s create it. Go to app -&gt; Resources -&gt; views and create a new folder todo. Inside folder todo, create a file index.html.twig. Inside this file for now you can just type a word INDEX and save it. Now you can check </span><span class="c20 c32"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todos&amp;sa=D&amp;ust=1531300702027000">http://127.0.0.1:8000/todos</a></span><span class="c9 c5">&nbsp;you should get INDEX word as a result in your browser. If you can see the result INDEX in your browser it means that you can go further. So let’s create three &nbsp;more files inside the todo folder:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <ul class="c18 lst-kix_cxt7kefduyar-0 start">
+        <li class="c12 c24"><span class="c9 c5">create.html.twig (type CREATE inside)</span></li>
+        <li class="c12 c24"><span class="c9 c5">details.html.twig (type DETAILS inside)</span></li>
+        <li class="c12 c24"><span class="c9 c5">edit.html.twig (type EDIT inside)</span></li>
+    </ul>
+    <p class="c12 c21 c49"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Now we need to change TodoController.php file, basically we need to add an action for every view that we’ve created:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.e2df686972d2f82173786ec368987009b613deb5"></a><a id="t.3"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c45">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">&lt;?</span><span class="c0 c5 c6">php</span></p>
+                    <p class="c7"><span class="c0 c4">namespace</span><span class="c0">&nbsp;</span><span class="c0 c8">AppBundle</span><span class="c0 c5 c6">\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Sensio</span><span class="c0 c5 c6">\Bundle\FrameworkExtraBundle\Configuration\Route;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Bundle\FrameworkBundle\Controller\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\HttpFoundation\Request;</span></p>
+                    <p class="c7"><span class="c0 c4">class</span><span class="c0">&nbsp;</span><span class="c0 c8">TodoController</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c5 c8">Controller</span></p>
+                    <p class="c7"><span class="c0 c5 c6">{</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todos"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_list")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;listAction</span><span class="c0 c5 c2">()</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; {</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/index.html.twig'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/create"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_create")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;createAction</span><span class="c0 c2">(</span><span class="c0 c8">Request</span><span class="c0 c5 c6">&nbsp;$request)</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; {</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/create.html.twig'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/details/{id}"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_details")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;detailsAction</span><span class="c0 c2">(</span><span class="c0 c5 c6">$id)</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; {</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/details.html.twig'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/edit/{id}"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_edit")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;editAction</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">Request</span><span class="c0 c5 c6">&nbsp;$request)</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; {</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/edit.html.twig'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0 c5 c6">}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Check if you get the right results for these requests:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c20 c32"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todos&amp;sa=D&amp;ust=1531300702040000">http://127.0.0.1:8000/todos</a></span></p>
+    <p class="c12"><span class="c20"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todo/create&amp;sa=D&amp;ust=1531300702041000">http://127.0.0.1:8000</a></span><span class="c20 c32"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todo/create&amp;sa=D&amp;ust=1531300702041000">/todo/create</a></span></p>
+    <p class="c12"><span class="c20"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todo/details/1&amp;sa=D&amp;ust=1531300702042000">http://127.0.0.1:8000</a></span><span class="c20 c32"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todo/details/1&amp;sa=D&amp;ust=1531300702042000">/todo/details/1</a></span></p>
+    <p class="c12"><span class="c20"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todo/edit/1&amp;sa=D&amp;ust=1531300702042000">http://127.0.0.1:8000</a></span><span class="c20 c32"><a class="c33" href="https://www.google.com/url?q=http://127.0.0.1:8000/todo/edit/1&amp;sa=D&amp;ust=1531300702042000">/todo/edit/1</a></span></p>
+    <p class="c12 c21"><span class="c20 c25"><a class="c33" href="https://www.google.com/url?q=http://todolist/todo/edit/1&amp;sa=D&amp;ust=1531300702043000"></a></span></p>
+    <p class="c12"><span class="c9 c5">If you get the expected results (INDEX, CREATE. DETAILS, EDIT) that means all your actions are now linked to your views and we can go to the next step - layout implementation.</span></p>
+    <h2 class="c34" id="h.hfhxx3cehshs"><span class="c25 c39 c6">Layout implementation - Bootstrap</span></h2>
+    <p class="c12"><span class="c63 c32">Default layout file for Symfony project is in app-&gt;Resources-&gt;views-&gt;</span><span class="c27">base.html.twig</span><span class="c9 c5">. If you open this file you can see this html/twig code:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.e477b7ca7613963291590a236e2dc3afc7032b6d"></a><a id="t.4"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c38">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c5 c8">&lt;!DOCTYPE html&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c4">&lt;html&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;head&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;meta</span><span class="c0">&nbsp;</span><span class="c0 c8">charset</span><span class="c0 c2">=</span><span class="c0 c1">"UTF-8"</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">/&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;title&gt;</span><span class="c0">{% block title %}Welcome!{% endblock %}</span><span class="c0 c5 c4">&lt;/title&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">{%</span><span class="c0">&nbsp;block stylesheets </span><span class="c0 c2">%}{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;link</span><span class="c0">&nbsp;</span><span class="c0 c8">rel</span><span class="c0 c2">=</span><span class="c0 c1">"icon"</span><span class="c0">&nbsp;</span><span class="c0 c8">type</span><span class="c0 c2">=</span><span class="c0 c1">"image/x-icon"</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"{{ asset('favicon.ico') }}"</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">/&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/head&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;body&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c2">%}{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">{%</span><span class="c0">&nbsp;block javascripts </span><span class="c0 c2">%}{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/body&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c4">&lt;/html&gt;</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12"><span class="c9 c5">Now we will take a basic Bootstrap template and add twig elements to it. So, after this your base.html.twig file should look like this:</span></p><a id="t.04c91773c8b79902b2f5a2beb600f6f907bdf0b7"></a><a id="t.5"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c65">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c5 c8">&lt;!DOCTYPE html&gt;</span></p>
+                    <p class="c7"><span class="c0 c4">&lt;html</span><span class="c0">&nbsp;</span><span class="c0 c8">lang</span><span class="c0 c2">=</span><span class="c0 c5 c1">"en"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; </span><span class="c0 c5 c4">&lt;head&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">&lt;meta</span><span class="c0">&nbsp;</span><span class="c0 c8">charset</span><span class="c0 c2">=</span><span class="c0 c5 c1">"utf-8"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">&lt;meta</span><span class="c0">&nbsp;</span><span class="c0 c8">http-equiv</span><span class="c0 c2">=</span><span class="c0 c1">"X-UA-Compatible"</span><span class="c0">&nbsp;</span><span class="c0 c8">content</span><span class="c0 c2">=</span><span class="c0 c5 c1">"IE=edge"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">&lt;meta</span><span class="c0">&nbsp;</span><span class="c0 c8">name</span><span class="c0 c2">=</span><span class="c0 c1">"viewport"</span><span class="c0">&nbsp;</span><span class="c0 c8">content</span><span class="c0 c2">=</span><span class="c0 c5 c1">"width=device-width, initial-scale=1"&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">&lt;title&gt;</span><span class="c0">{% block title %}Welcome!{% endblock %}</span><span class="c0 c5 c4">&lt;/title&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c3">&lt;!-- Bootstrap core CSS --&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp;</span><span class="c0 c4">&lt;link</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</span><span class="c0">&nbsp;</span><span class="c0 c8">rel</span><span class="c0 c2">=</span><span class="c0 c5 c1">"stylesheet"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c2">{%</span><span class="c0">&nbsp;block stylesheets </span><span class="c0 c2">%}{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;link</span><span class="c0">&nbsp;</span><span class="c0 c8">rel</span><span class="c0 c2">=</span><span class="c0 c1">"icon"</span><span class="c0">&nbsp;</span><span class="c0 c8">type</span><span class="c0 c2">=</span><span class="c0 c1">"image/x-icon"</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"{{ asset('favicon.ico') }}"</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">/&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; </span><span class="c0 c5 c4">&lt;/head&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; </span><span class="c0 c5 c4">&lt;body&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">&lt;nav</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"navbar navbar-inverse"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;div</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"container"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;div</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"navbar-header"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;button</span><span class="c0">&nbsp;</span><span class="c0 c8">type</span><span class="c0 c2">=</span><span class="c0 c1">"button"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"navbar-toggle collapsed"</span><span class="c0">&nbsp;</span><span class="c0 c8">data-toggle</span><span class="c0 c2">=</span><span class="c0 c1">"collapse"</span><span class="c0">&nbsp;</span><span class="c0 c8">data-target</span><span class="c0 c2">=</span><span class="c0 c1">"#navbar"</span><span class="c0">&nbsp;</span><span class="c0 c8">aria-expanded</span><span class="c0 c2">=</span><span class="c0 c1">"false"</span><span class="c0">&nbsp;</span><span class="c0 c8">aria-controls</span><span class="c0 c2">=</span><span class="c0 c5 c1">"navbar"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;span</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"sr-only"</span><span class="c0 c4">&gt;</span><span class="c0">Toggle navigation</span><span class="c0 c5 c4">&lt;/span&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;span</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"icon-bar"</span><span class="c0 c5 c4">&gt;&lt;/span&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;span</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"icon-bar"</span><span class="c0 c5 c4">&gt;&lt;/span&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;span</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"icon-bar"</span><span class="c0 c5 c4">&gt;&lt;/span&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/button&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"navbar-brand"</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"#"</span><span class="c0 c4">&gt;</span><span class="c0">TodoList</span><span class="c0 c5 c4">&lt;/a&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/div&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;div</span><span class="c0">&nbsp;</span><span class="c0 c8">id</span><span class="c0 c2">=</span><span class="c0 c1">"navbar"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"collapse navbar-collapse"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;ul</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"nav navbar-nav"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;li&gt;&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/"</span><span class="c0 c4">&gt;</span><span class="c0">Home</span><span class="c0 c5 c4">&lt;/a&gt;&lt;/li&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;li&gt;&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/todo/create"</span><span class="c0 c4">&gt;</span><span class="c0">Add Todo</span><span class="c0 c5 c4">&lt;/a&gt;&lt;/li&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/ul&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;/div&gt;</span><span class="c0 c3">&lt;!--/.nav-collapse --&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/div&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/nav&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">&lt;div</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"container"&gt;</span></p>
+                    <p class="c7"><span class="c0 c4">&lt;div</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"row"</span><span class="c0 c5 c4">&gt;</span></p>
+                    <p class="c7"><span class="c0 c4">&lt;div</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"col-md-12"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c2">%}{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c5 c4">&lt;/div&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c4">&lt;/div&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">&lt;/div&gt;</span><span class="c0 c3">&lt;!-- /.container --&gt;</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;block javascripts </span><span class="c0 c2">%}{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; </span><span class="c0 c5 c4">&lt;/body&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c4">&lt;/html&gt;</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">We need to do one more thing before we get a new Bootstrap layout in our Symfony project and that is to include it to our views from the todo folder:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <ul class="c18 lst-kix_aye3a4k214cv-0 start">
+        <li class="c12 c24"><span class="c9 c5">create.html.twig</span></li>
+        <li class="c12 c24"><span class="c9 c5">details.html.twig</span></li>
+        <li class="c12 c24"><span class="c9 c5">edit.html.twig</span></li>
+        <li class="c12 c24"><span class="c9 c5">index.html.twig</span></li>
+    </ul>
+    <p class="c12 c49 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">In each of these files we need to add this code (the word INDEX you will change for every page e.g. CREATE; DETAILS etc.):</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.916c027744a35d9a45dfd1db62082eb7fc87ea25"></a><a id="t.6"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c22">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c1">'base.html.twig'</span><span class="c0">&nbsp;</span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; INDEX</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Now if you visit todolist/todos you should get this view as in the image below:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 388.00px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image4.png" style="width: 624.00px; height: 388.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c12"><span class="c9 c5">Now if we want to change the default index page for our project from todolist/todos/ to just todolist/ we need to code in the DefaultController.php file to this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.eb0f6248c90f9eb43eac99c333fc4ab385d7c99c"></a><a id="t.7"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c38">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">&lt;?</span><span class="c0 c5 c6">php</span></p>
+                    <p class="c7"><span class="c0 c4">namespace</span><span class="c0">&nbsp;</span><span class="c0 c8">AppBundle</span><span class="c0 c5 c6">\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Sensio</span><span class="c0 c5 c6">\Bundle\FrameworkExtraBundle\Configuration\Route;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Bundle\FrameworkBundle\Controller\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\HttpFoundation\Request;</span></p>
+                    <p class="c7"><span class="c0 c4">class</span><span class="c0">&nbsp;</span><span class="c0 c8">DefaultController</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c5 c8">Controller</span></p>
+                    <p class="c7"><span class="c0 c5 c6">{</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp;</span></p>
+                    <p class="c7"><span class="c0 c5 c6">}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">After the changes in DefaultController.php we can change Route in class TodoController in TodoController.php file to:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.0d6bd0bb51760f83d6a601da84f86f085098ca91"></a><a id="t.8"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c15">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_list")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Now if everything is fine you should be able to get INDEX view on the http://todolist/</span></p>
+    <p class="c12"><span class="c9 c5">Next step is to add some content to the views. We will use tables to present our todos, but before that we will create a database for our todo list.</span></p>
+    <h2 class="c34" id="h.6p71grpvareo"><span class="c25 c50 c6">Doctrine</span></h2>
+    <p class="c12"><span class="c63 c32">More information about the Symfony Doctrine you can find in the Symfony documentation page on this link: </span><span class="c20 c25"><a class="c33" href="https://www.google.com/url?q=https://symfony.com/doc/3.3/doctrine.html&amp;sa=D&amp;ust=1531300702076000">https://symfony.com/doc/3.3/doctrine.html</a></span></p>
+    <h3 class="c42" id="h.ir02ohv0wyci"><span class="c17 c5">Database create</span></h3>
+    <p class="c12"><span class="c9 c5">First step is to open parameters.yml file in the app-&gt;config folder. This file keeps information about your database connection. Insert database_name and other parameters if you are not using the default settings for XAMPP.</span></p>
+    <p class="c12 c21"><span class="c5 c9"></span></p><a id="t.a4168886767aa85c970e92121363af38e975d1fe"></a><a id="t.9"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c60">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c3"># This file is auto-generated during the composer install</span></p>
+                    <p class="c7"><span class="c0 c5 c6">parameters:</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; database_host</span><span class="c0 c2">:</span><span class="c0">&nbsp;</span><span class="c0 c19">127.0</span><span class="c0 c2">.</span><span class="c0 c5 c19">0.1</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; database_port</span><span class="c0 c2">:</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">null</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; database_name</span><span class="c0 c2">:</span><span class="c0 c5 c6">&nbsp;todo_list</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; database_user</span><span class="c0 c2">:</span><span class="c0 c5 c6">&nbsp;root</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; database_password</span><span class="c0 c2">:</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">null</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; mailer_transport</span><span class="c0 c2">:</span><span class="c0 c5 c6">&nbsp;smtp</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; mailer_host</span><span class="c0 c2">:</span><span class="c0">&nbsp;</span><span class="c0 c19">127.0</span><span class="c0 c2">.</span><span class="c0 c5 c19">0.1</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; mailer_user</span><span class="c0 c2">:</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">null</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; mailer_password</span><span class="c0 c2">:</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">null</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; secret</span><span class="c0 c2">:</span><span class="c0 c5 c6">&nbsp;ed436fd8e7560170bc6025814ee9139affb2b4f2</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">After this you need to open Command prompt and to navigate to your project folder. Now we will run doctrine commands. First command will be a command for the database creation, this command will use data from parameters.yml file and generate the database for us (you can check in phpmyadmin):</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.8597770119f630b0499efd1bf9c4bde2148ab542"></a><a id="t.10"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c10">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c55"><span class="c0">php bin</span><span class="c0 c2">/</span><span class="c0">console doctrine</span><span class="c0 c2">:</span><span class="c0">database</span><span class="c0 c2">:</span><span class="c0 c5 c6">create</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12"><span class="c9 c5">&nbsp;</span></p>
+    <h3 class="c42" id="h.npe7si5dtfhq"><span class="c17 c5">Creating an Entity Class</span></h3>
+    <p class="c12"><span class="c9 c5">To create an entity we need to run the following command, if you want to know more about this process you can read it on this link in the official Symfony documentation</span></p>
+    <p class="c12"><span class="c32 c63">&nbsp;</span><span class="c20 c32"><a class="c33" href="https://www.google.com/url?q=https://symfony.com/doc/3.4/doctrine.html%23creating-an-entity-class&amp;sa=D&amp;ust=1531300702082000">https://symfony.com/doc/3.4/doctrine.html#creating-an-entity-class</a></span></p>
+    <p class="c12 c21"><span class="c20 c25"><a class="c33" href="https://www.google.com/url?q=https://symfony.com/doc/3.3/doctrine.html%23creating-an-entity-class&amp;sa=D&amp;ust=1531300702083000"></a></span></p><a id="t.384893dfad6b0f357a89cbe3abedd963db138abf"></a><a id="t.11"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c10">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c55"><span class="c0">php bin</span><span class="c0 c2">/</span><span class="c0">console doctrine</span><span class="c0 c2">:</span><span class="c0">generate</span><span class="c0 c2">:</span><span class="c0 c5 c6">entity</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">After you run the command to generate an &nbsp;entity you will get this message:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.bd3a5c5714b269714f3c76d90510b26d5a52186b"></a><a id="t.12"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c48">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c8">Welcome</span><span class="c0">&nbsp;to the </span><span class="c0 c8">Doctrine2</span><span class="c0 c5 c6">&nbsp;entity generator</span></p>
+                    <p class="c7"><span class="c0 c8">This</span><span class="c0">&nbsp;command helps you generate </span><span class="c0 c8">Doctrine2</span><span class="c0 c5 c6">&nbsp;entities.</span></p>
+                    <p class="c7"><span class="c0 c8">First</span><span class="c0 c2">,</span><span class="c0 c5 c6">&nbsp;you need to give the entity name you want to generate.</span></p>
+                    <p class="c7"><span class="c0 c8">You</span><span class="c0">&nbsp;must </span><span class="c0 c4">use</span><span class="c0">&nbsp;the shortcut notation like </span><span class="c0 c8">AcmeBlogBundle</span><span class="c0 c2">:</span><span class="c0 c5 c8">Post.</span></p>
+                    <p class="c7"><span class="c0 c8">The</span><span class="c0">&nbsp;</span><span class="c0 c8">Entity</span><span class="c0 c5 c6">&nbsp;shortcut name:</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c16 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Now you need to insert this for the Entity shortcut name: AppBundle:Todo</span></p>
+    <p class="c12"><span class="c9 c5">After that you will get this message:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.1ca32ae5bead0187eb1117f819d6cb166b4268eb"></a><a id="t.13"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c10">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c8">Configuration</span><span class="c0">&nbsp;format </span><span class="c0 c2">(</span><span class="c0">yml</span><span class="c0 c2">,</span><span class="c0">&nbsp;xml</span><span class="c0 c2">,</span><span class="c0">&nbsp;php</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c4">or</span><span class="c0">&nbsp;annotation</span><span class="c0 c2">)</span><span class="c0">&nbsp;</span><span class="c0 c2">[</span><span class="c0">annotation</span><span class="c0 c5 c2">]:</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Just press Enter this will keep the default annotation format. Now you can start to add fields, first we will type: name and press enter, we will keep the default values for field type, length, nullable, unique - just press enter which means the default value. We will also create fields: category, description, priority with the default values, the last two fields are: due_date and create_date with the type datetime. At the end just press enter and you should get the message:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.50e7d42e37444347b581e80b27e97194eb5ce41f"></a><a id="t.14"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c10">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c8">Everything</span><span class="c0">&nbsp;</span><span class="c0 c4">is</span><span class="c0">&nbsp;OK</span><span class="c0 c2">!</span><span class="c0">&nbsp;</span><span class="c0 c8">Now</span><span class="c0">&nbsp;</span><span class="c0 c4">get</span><span class="c0">&nbsp;to work </span><span class="c0 c5 c2">:).</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12"><span class="c9 c5">&nbsp;</span></p>
+    <p class="c12"><span class="c9 c5">You can check inside src folder -&gt; AppBundle -&gt; Entity -&gt; todo.php. In this file every property that we generated using doctrine has getters and setters. Next step will be to generate the table with these properties.</span></p>
+    <h3 class="c42" id="h.e2p2usuyeqgg"><span class="c5 c17">Creating the Database Tables/Schema</span></h3>
+    <p class="c12"><span class="c9 c5">We need to run this command to generate a table with the properties that we’ve already defined:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.a8edcfe497deaa55a128408efb3783e6a64be205"></a><a id="t.15"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c10">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c55"><span class="c0">php bin</span><span class="c0 c2">/</span><span class="c0">console doctrine</span><span class="c0 c2">:</span><span class="c0">schema</span><span class="c0 c2">:</span><span class="c0">update </span><span class="c0 c2">--</span><span class="c0 c5 c6">force</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12"><span class="c9 c5">&nbsp;</span></p>
+    <p class="c12"><span class="c9 c5">At the end you should get this message:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.36456a95f5dd9883f6f7904d54d6f831b2ad1bac"></a><a id="t.16"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c41">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c8">Updating</span><span class="c0">&nbsp;database schema</span><span class="c0 c5 c2">...</span></p>
+                    <p class="c7"><span class="c0 c8">Database</span><span class="c0">&nbsp;schema updated successfully</span><span class="c0 c2">!</span><span class="c0">&nbsp;</span><span class="c0 c1">"1"</span><span class="c0 c5 c6">&nbsp;query was executed</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c16 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Now if you open phpmyadmin you should be able to see the todo table like in the image below:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 152.00px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image7.png" style="width: 624.00px; height: 152.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">You can manually insert a few todos using phpmyadmin just to have a few rows in the table.</span></p>
+    <h2 class="c34" id="h.fdep69sgmbc1"><span class="c25 c39 c6">Views</span></h2>
+    <p class="c12"><span class="c9 c5">Let’s add a bootstrap table for our todos on the index page. For that we will change the index.html.twig file to this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.90a9316e4e6c10c5d0ae571c065b0444cecfbb89"></a><a id="t.17"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c13">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c1">'base.html.twig'</span><span class="c0">&nbsp;</span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+                    <p class="c7"><span class="c0">&nbsp;</span><span class="c0 c4">&lt;h2</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"page-header"</span><span class="c0 c4">&gt;</span><span class="c0">&nbsp;Latest todos </span><span class="c0 c5 c4">&lt;/h2&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp;</span><span class="c0 c4">&lt;table</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"table table-striped"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;thead&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;tr&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th&gt;</span><span class="c0">#</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th&gt;</span><span class="c0">Todo</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th&gt;</span><span class="c0">Due Date</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4 c5">&lt;th&gt;&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/tr&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/thead&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;tbody&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;tr&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th</span><span class="c0">&nbsp;</span><span class="c0 c8">scope</span><span class="c0 c2">=</span><span class="c0 c1">"row"</span><span class="c0 c4">&gt;</span><span class="c0">1</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;td&gt;</span><span class="c0">NAME</span><span class="c0 c5 c4">&lt;/td&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;td&gt;</span><span class="c0">DUE DATE</span><span class="c0 c5 c4">&lt;/td&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;td&gt;</span><span class="c0">&nbsp;</span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/todo/details/1"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"btn btn-success"</span><span class="c0 c4">&gt;</span><span class="c0">View</span><span class="c0 c5 c4">&lt;/a&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/todo/edit/1"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"btn btn-default"</span><span class="c0 c4">&gt;</span><span class="c0">Edit</span><span class="c0 c5 c4">&lt;/a&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/todo/delete/1"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"btn btn-danger"</span><span class="c0 c4">&gt;</span><span class="c0">Delete</span><span class="c0 c5 c4">&lt;/a&gt; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/td&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;/tr&gt;</span><span class="c0 c5 c6">&nbsp;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/tbody&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/table&gt;</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c16 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Now the index page should look like this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 345.33px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image1.png" style="width: 624.00px; height: 345.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c12"><span class="c9 c5">Next step is to fetch the real date from our database in this table.</span></p>
+    <h2 class="c34" id="h.wfwnme56t14n"><span class="c25 c39 c6">Fetching data from the database</span></h2>
+    <p class="c36 c21"><span class="c31 c69 c6"></span></p>
+    <p class="c12"><span class="c9 c5">You need to change a few files to fetch data from the database. First you need to change your TodoController.php to this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.840632fc4d94512aa5335646b70695f929497ac0"></a><a id="t.18"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c57">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">&lt;?</span><span class="c0 c5 c6">php</span></p>
+                    <p class="c7"><span class="c0 c4">namespace</span><span class="c0">&nbsp;</span><span class="c0 c8">AppBundle</span><span class="c0 c5 c6">\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">AppBundle</span><span class="c0 c5 c6">\Entity\Todo;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Sensio</span><span class="c0 c5 c6">\Bundle\FrameworkExtraBundle\Configuration\Route;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Bundle\FrameworkBundle\Controller\Controller;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\HttpFoundation\Request;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\Form\Extension\Core\Type\TextType;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\Form\Extension\Core\Type\TextareaType;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\Form\Extension\Core\Type\DateTimeType;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\Form\Extension\Core\Type\ChoiceType;</span></p>
+                    <p class="c7"><span class="c0 c4">use</span><span class="c0">&nbsp;</span><span class="c0 c8">Symfony</span><span class="c0 c5 c6">\Component\Form\Extension\Core\Type\SubmitType;</span></p>
+                    <p class="c7"><span class="c0 c4">class</span><span class="c0">&nbsp;</span><span class="c0 c8">TodoController</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c5 c8">Controller</span></p>
+                    <p class="c7"><span class="c0 c5 c6">{</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_list")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;listAction</span><span class="c0 c5 c2">(){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; $todos </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">getDoctrine</span><span class="c0 c2">()-&gt;</span><span class="c0">getRepository</span><span class="c0 c2">(</span><span class="c0 c1">'AppBundle:Todo'</span><span class="c0 c2">)-&gt;</span><span class="c0">findAll</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">// replace this example code with whatever you need</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/index.html.twig'</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'todos'</span><span class="c0 c2">=&gt;</span><span class="c0">$todos</span><span class="c0 c5 c2">));</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/create"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_create")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;createAction</span><span class="c0 c2">(</span><span class="c0 c8">Request</span><span class="c0">&nbsp;$request</span><span class="c0 c5 c2">){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; $todo </span><span class="c0 c2">=</span><span class="c0">&nbsp;</span><span class="c0 c4">new</span><span class="c0">&nbsp;</span><span class="c0 c5 c8">Todo;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; $form </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">createFormBuilder</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c2">)-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'name'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">TextType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-bottom:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'category'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">TextType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-bottom:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'description'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">TextareaType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-bottom:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'priority'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">ChoiceType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'choices'</span><span class="c0 c2">=&gt;</span><span class="c0">array</span><span class="c0 c2">(</span><span class="c0 c1">'Low'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'Low'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'Normal'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'Normal'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'High'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'High'</span><span class="c0 c2">),</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-botton:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'due_date'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">DateTimeType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-bottom:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'save'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">SubmitType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'label'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'Create Todo'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'btn-primary'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-bottom:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">getForm</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; $form</span><span class="c0 c2">-&gt;</span><span class="c0">handleRequest</span><span class="c0 c2">(</span><span class="c0">$request</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">if</span><span class="c0 c2">(</span><span class="c0">$form</span><span class="c0 c2">-&gt;</span><span class="c0">isSubmitted</span><span class="c0 c2">()</span><span class="c0">&nbsp;</span><span class="c0 c2">&amp;&amp;</span><span class="c0">&nbsp;$form</span><span class="c0 c2">-&gt;</span><span class="c0">isValid</span><span class="c0 c5 c2">()){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">//fetching data</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $name </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'name'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $category </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'category'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $description </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'description'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $priority </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'priority'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $due_date </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'due_date'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $now </span><span class="c0 c2">=</span><span class="c0">&nbsp;</span><span class="c0 c4">new</span><span class="c0">\DateTime</span><span class="c0 c2">(</span><span class="c0 c1">'now'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setName</span><span class="c0 c2">(</span><span class="c0">$name</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setCategory</span><span class="c0 c2">(</span><span class="c0">$category</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setDescription</span><span class="c0 c2">(</span><span class="c0">$description</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setPriority</span><span class="c0 c2">(</span><span class="c0">$priority</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setDueDate</span><span class="c0 c2">(</span><span class="c0">$due_date</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setCreateDate</span><span class="c0 c2">(</span><span class="c0">$now</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $em </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">getDoctrine</span><span class="c0 c2">()-&gt;</span><span class="c0">getManager</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $em</span><span class="c0 c2">-&gt;</span><span class="c0">persist</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $em</span><span class="c0 c2">-&gt;</span><span class="c0">flush</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this</span><span class="c0 c2">-&gt;</span><span class="c0 c5 c6">addFlash(</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c1">'notice',</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c1">'Todo Added'</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">redirectToRoute</span><span class="c0 c2">(</span><span class="c0 c1">'todo_list'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">// replace this example code with whatever you need</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/create.html.twig'</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'form'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;$form</span><span class="c0 c2">-&gt;</span><span class="c0">createView</span><span class="c0 c5 c2">()));</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/edit/{id}"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_edit")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;editAction</span><span class="c0 c2">(</span><span class="c0">&nbsp;$id</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">Request</span><span class="c0">&nbsp;$request</span><span class="c0 c5 c2">){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">// replace this example code with whatever you need</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/edit.html.twig'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/details/{id}"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_details")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;detailsAction</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c5 c2">){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">// replace this example code with whatever you need</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/details.html.twig'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0 c5 c6">}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">Index.html.twig to this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.6620f1306f790a155a28a2b03be09fe8d45d1393"></a><a id="t.19"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c14">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c1">'base.html.twig'</span><span class="c0">&nbsp;</span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+                    <p class="c7"><span class="c0">&nbsp;</span><span class="c0 c4">&lt;h2</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"page-header"</span><span class="c0 c4">&gt;</span><span class="c0">&nbsp;Latest todos </span><span class="c0 c5 c4">&lt;/h2&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp;</span><span class="c0 c4">&lt;table</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"table table-striped"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;thead&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;tr&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th&gt;</span><span class="c0">#</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th&gt;</span><span class="c0">Todo</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th&gt;</span><span class="c0">Due Date</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;th&gt;&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/tr&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/thead&gt;</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;</span><span class="c0 c4">for</span><span class="c0">&nbsp;todo </span><span class="c0 c4">in</span><span class="c0">&nbsp;todos </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;tbody&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;tr&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;th</span><span class="c0">&nbsp;</span><span class="c0 c8">scope</span><span class="c0 c2">=</span><span class="c0 c1">"row"</span><span class="c0 c4">&gt;</span><span class="c0">{{todo.id}}</span><span class="c0 c5 c4">&lt;/th&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;td&gt;</span><span class="c0">{{todo.name}}</span><span class="c0 c5 c4">&lt;/td&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;td&gt;</span><span class="c0">{{todo.dueDate|date('F j, Y, g:i a')}}</span><span class="c0 c5 c4">&lt;/td&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;td&gt;</span><span class="c0">&nbsp;</span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/todo/details/{{todo.id}}"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"btn btn-success"</span><span class="c0 c4">&gt;</span><span class="c0">View</span><span class="c0 c5 c4">&lt;/a&gt;</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/todo/edit/{{todo.id}}"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"btn btn-default"</span><span class="c0 c4">&gt;</span><span class="c0">Edit</span><span class="c0 c5 c4">&lt;/a&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/todo/delete/{{todo.id}}"</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"btn btn-danger"</span><span class="c0 c4">&gt;</span><span class="c0">Delete</span><span class="c0 c5 c4">&lt;/a&gt; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/td&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;/tr&gt;</span><span class="c0 c5 c6">&nbsp;</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;endfor </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/tbody&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/table&gt;</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="c34" id="h.qab9wub1wnt9"><span class="c25 c39 c6">Inserting data in the database</span></h2>
+    <p class="c12"><span class="c9 c5">We’ve already defined all necessary variables in the TodoController.php file from the previous example, now we will add something to view create.html.twig:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.1208a62b11c557a21209075c0a7e79589b0fd0e5"></a><a id="t.20"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c64">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c1">'base.html.twig'</span><span class="c0">&nbsp;</span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c4">&lt;h2</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"page-header"</span><span class="c0 c4">&gt;</span><span class="c0">Add Todo</span><span class="c0 c5 c4">&lt;/h2&gt;</span></p>
+                    <p class="c7"><span class="c0 c2">{{</span><span class="c0">form_start</span><span class="c0 c2">(</span><span class="c0">form</span><span class="c0 c5 c2">)}}</span></p>
+                    <p class="c7"><span class="c0 c2">{{</span><span class="c0">form_widget</span><span class="c0 c2">(</span><span class="c0">form</span><span class="c0 c5 c2">)}}</span></p>
+                    <p class="c7"><span class="c0 c2">{{</span><span class="c0">form_end</span><span class="c0 c2">(</span><span class="c0">form</span><span class="c0 c5 c2">)}}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">This should be the result:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 508.00px; height: 509.33px;"><img alt="" src="https://www.codefactory.academy/examples/fswd4/symfony/images1/image6.png" style="width: 508.00px; height: 509.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p>
+    <p class="c12"><span class="c9 c5">Now you can add your Todos and see them on your index page.</span></p>
+    <h2 class="c34" id="h.1dj22mokat3x"><span class="c25 c39 c6">Details page</span></h2>
+    <p class="c12"><span class="c9 c5">To get view page for your Todos you need to change the function detailsAction() in your TodoController.php file to this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.af0209b33cb20e8921a14739c5c3f15b97509233"></a><a id="t.21"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c46">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;detailsAction</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c5 c2">){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">getDoctrine</span><span class="c0 c2">()-&gt;</span><span class="c0">getRepository</span><span class="c0 c2">(</span><span class="c0 c1">'AppBundle:Todo'</span><span class="c0 c2">)-&gt;</span><span class="c0">find</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/details.html.twig'</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'todo'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;$todo</span><span class="c0 c5 c2">));</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">And to change your details.html.twig view to this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.917cece52ea490a5e26e744382899ddc712cb8ec"></a><a id="t.22"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c61">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c1">'base.html.twig'</span><span class="c0">&nbsp;</span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;a</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"btn btn-default"</span><span class="c0">&nbsp;</span><span class="c0 c8">href</span><span class="c0 c2">=</span><span class="c0 c1">"/"</span><span class="c0 c4">&gt;</span><span class="c0">Back to Todos</span><span class="c0 c5 c4">&lt;/a&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;hr&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;h2</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"page-header"</span><span class="c0 c4">&gt;</span><span class="c0">{{todo.name}}</span><span class="c0 c5 c4">&lt;/h2&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;ul</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c5 c1">"list-group"&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;li</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"list-group-item"</span><span class="c0 c4">&gt;</span><span class="c0">Category: {{todo.category}}</span><span class="c0 c5 c4">&lt;/li&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;li</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"list-group-item"</span><span class="c0 c4">&gt;</span><span class="c0">Priority: {{todo.priority}}</span><span class="c0 c5 c4">&lt;/li&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">&lt;li</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"list-group-item"</span><span class="c0 c4">&gt;</span><span class="c0">Due: </span><span class="c0 c4">&lt;strong&gt;</span><span class="c0">&nbsp;{{todo.dueDate|date('F j, Y, g:i a')}} </span><span class="c0 c4">&lt;/strong&gt;</span><span class="c0">&nbsp;</span><span class="c0 c5 c4">&lt;/li&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/ul&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;p&gt;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">{{</span><span class="c0">todo</span><span class="c0 c2">.</span><span class="c0">description</span><span class="c0 c5 c2">}}</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c4">&lt;/p&gt;</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="c34" id="h.i8h83lmds75a"><span class="c25 c6 c39">Edit page</span></h2>
+    <p class="c12"><span class="c9 c5">To edit the page for your Todos you need to change the function editAction() in your TodoController.php file to this:</span></p><a id="t.8ef727744a22dc4aa1995d14e205189ba674bdda"></a><a id="t.23"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c43">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0">&nbsp;</span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/edit/{id}"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_edit")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;editAction</span><span class="c0 c2">(</span><span class="c0">&nbsp;$id</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">Request</span><span class="c0">&nbsp;$request</span><span class="c0 c5 c2">){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; $todo </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">getDoctrine</span><span class="c0 c2">()-&gt;</span><span class="c0">getRepository</span><span class="c0 c2">(</span><span class="c0 c1">'AppBundle:Todo'</span><span class="c0 c2">)-&gt;</span><span class="c0">find</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">$now </span><span class="c0 c2">=</span><span class="c0">&nbsp;</span><span class="c0 c4">new</span><span class="c0">\DateTime</span><span class="c0 c2">(</span><span class="c0 c1">'now'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setName</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c2">-&gt;</span><span class="c0">getName</span><span class="c0 c5 c2">());</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setCategory</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c2">-&gt;</span><span class="c0">getCategory</span><span class="c0 c5 c2">());</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setDescription</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c2">-&gt;</span><span class="c0">getDescription</span><span class="c0 c5 c2">());</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setPriority</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c2">-&gt;</span><span class="c0">getPriority</span><span class="c0 c5 c2">());</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setDueDate</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c2">-&gt;</span><span class="c0">getDueDate</span><span class="c0 c5 c2">());</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setCreateDate</span><span class="c0 c2">(</span><span class="c0">$now</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; $form </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">createFormBuilder</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c2">)-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'name'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">TextType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-botton:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'category'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">TextType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-bottom:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'description'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">TextareaType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-botton:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'priority'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">ChoiceType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'choices'</span><span class="c0 c2">=&gt;</span><span class="c0">array</span><span class="c0 c2">(</span><span class="c0 c1">'Low'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'Low'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'Normal'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'Normal'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'High'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'High'</span><span class="c0 c2">),</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'form-control'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-botton:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'due_date'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">DateTimeType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-bottom:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">add</span><span class="c0 c2">(</span><span class="c0 c1">'save'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c8">SubmitType</span><span class="c0 c2">::</span><span class="c0 c4">class</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'label'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'Update Todo'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'attr'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'class'</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;</span><span class="c0 c1">'btn-primary'</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'style'</span><span class="c0 c2">=&gt;</span><span class="c0 c1">'margin-botton:15px'</span><span class="c0 c5 c2">)))</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c2">-&gt;</span><span class="c0">getForm</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; $form</span><span class="c0 c2">-&gt;</span><span class="c0">handleRequest</span><span class="c0 c2">(</span><span class="c0">$request</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">if</span><span class="c0 c2">(</span><span class="c0">$form</span><span class="c0 c2">-&gt;</span><span class="c0">isSubmitted</span><span class="c0 c2">()</span><span class="c0">&nbsp;</span><span class="c0 c2">&amp;&amp;</span><span class="c0">&nbsp;$form</span><span class="c0 c2">-&gt;</span><span class="c0">isValid</span><span class="c0 c5 c2">()){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c3">//fetching data</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $name </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'name'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $category </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'category'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $description </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'description'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $priority </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'priority'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $due_date </span><span class="c0 c2">=</span><span class="c0">&nbsp;$form</span><span class="c0 c2">[</span><span class="c0 c1">'due_date'</span><span class="c0 c2">]-&gt;</span><span class="c0">getData</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $now </span><span class="c0 c2">=</span><span class="c0">&nbsp;</span><span class="c0 c4">new</span><span class="c0">\DateTime</span><span class="c0 c2">(</span><span class="c0 c1">'now'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $em </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">getDoctrine</span><span class="c0 c2">()-&gt;</span><span class="c0">getManager</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo </span><span class="c0 c2">=</span><span class="c0">&nbsp;$em</span><span class="c0 c2">-&gt;</span><span class="c0">getRepository</span><span class="c0 c2">(</span><span class="c0 c1">'AppBundle:Todo'</span><span class="c0 c2">)-&gt;</span><span class="c0">find</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setName</span><span class="c0 c2">(</span><span class="c0">$name</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setCategory</span><span class="c0 c2">(</span><span class="c0">$category</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setDescription</span><span class="c0 c2">(</span><span class="c0">$description</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setPriority</span><span class="c0 c2">(</span><span class="c0">$priority</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setDueDate</span><span class="c0 c2">(</span><span class="c0">$due_date</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo</span><span class="c0 c2">-&gt;</span><span class="c0">setCreateDate</span><span class="c0 c2">(</span><span class="c0">$now</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $em</span><span class="c0 c2">-&gt;</span><span class="c0">flush</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this</span><span class="c0 c2">-&gt;</span><span class="c0 c5 c6">addFlash(</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c1">'notice',</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c1">'Todo Updated'</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">redirectToRoute</span><span class="c0 c2">(</span><span class="c0 c1">'todo_list'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">render</span><span class="c0 c2">(</span><span class="c0 c1">'todo/edit.html.twig'</span><span class="c0 c2">,</span><span class="c0">&nbsp;array</span><span class="c0 c2">(</span><span class="c0 c1">'todo'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;$todo</span><span class="c0 c2">,</span><span class="c0">&nbsp;</span><span class="c0 c1">'form'</span><span class="c0">&nbsp;</span><span class="c0 c2">=&gt;</span><span class="c0">&nbsp;$form</span><span class="c0 c2">-&gt;</span><span class="c0">createView</span><span class="c0 c5 c2">()));</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">And to change your edit.html.twig view to this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.f01db62528d61b8055c850d3469a377baeece6b7"></a><a id="t.24"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c64">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;</span><span class="c0 c4">extends</span><span class="c0">&nbsp;</span><span class="c0 c1">'base.html.twig'</span><span class="c0">&nbsp;</span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;block body </span><span class="c0 c5 c2">%}</span></p>
+                    <p class="c7"><span class="c0 c4">&lt;h2</span><span class="c0">&nbsp;</span><span class="c0 c8">class</span><span class="c0 c2">=</span><span class="c0 c1">"page-header"</span><span class="c0 c4">&gt;</span><span class="c0">Edit Todo</span><span class="c0 c5 c4">&lt;/h2&gt;</span></p>
+                    <p class="c7"><span class="c0 c2">{{</span><span class="c0">form_start</span><span class="c0 c2">(</span><span class="c0">form</span><span class="c0 c5 c2">)}}</span></p>
+                    <p class="c7"><span class="c0 c2">{{</span><span class="c0">form_widget</span><span class="c0 c2">(</span><span class="c0">form</span><span class="c0 c5 c2">)}}</span></p>
+                    <p class="c7"><span class="c0 c2">{{</span><span class="c0">form_end</span><span class="c0 c2">(</span><span class="c0">form</span><span class="c0 c5 c2">)}}</span></p>
+                    <p class="c7"><span class="c0 c2">{%</span><span class="c0">&nbsp;endblock </span><span class="c0 c5 c2">%}</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 class="c34" id="h.g8tcwxyfzfn6"><span class="c25 c39 c6">Delete action</span></h2>
+    <p class="c12"><span class="c9 c5">To delete we need to define a new action in TodoController.php like this:</span></p>
+    <p class="c12 c21"><span class="c9 c5"></span></p><a id="t.4223a9a4d7768cfc6384f4dd166d08cc09576413"></a><a id="t.25"></a>
+    <table class="c29">
+        <tbody>
+            <tr class="c30">
+                <td class="c28" colspan="1" rowspan="1">
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c3">/**</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c2">*</span><span class="c0">&nbsp;</span><span class="c0 c19">@Route</span><span class="c0 c2">(</span><span class="c0 c1">"/todo/delete/{id}"</span><span class="c0 c2">,</span><span class="c0">&nbsp;name</span><span class="c0 c2">=</span><span class="c0 c5 c1">"todo_delete")</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp;</span><span class="c0 c5 c2">*/</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; </span><span class="c0 c4">public</span><span class="c0">&nbsp;</span><span class="c0 c4">function</span><span class="c0">&nbsp;deleteAction</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c5 c2">){</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$em </span><span class="c0 c2">=</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">getDoctrine</span><span class="c0 c2">()-&gt;</span><span class="c0">getManager</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo </span><span class="c0 c2">=</span><span class="c0">&nbsp;$em</span><span class="c0 c2">-&gt;</span><span class="c0">getRepository</span><span class="c0 c2">(</span><span class="c0 c1">'AppBundle:Todo'</span><span class="c0 c2">)-&gt;</span><span class="c0">find</span><span class="c0 c2">(</span><span class="c0">$id</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $em</span><span class="c0 c2">-&gt;</span><span class="c0">remove</span><span class="c0 c2">(</span><span class="c0">$todo</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$em</span><span class="c0 c2">-&gt;</span><span class="c0">flush</span><span class="c0 c5 c2">();</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this</span><span class="c0 c2">-&gt;</span><span class="c0 c5 c6">addFlash(</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c1">'notice',</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c1">'Todo Removed'</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="c0 c4">return</span><span class="c0">&nbsp;$this</span><span class="c0 c2">-&gt;</span><span class="c0">redirectToRoute</span><span class="c0 c2">(</span><span class="c0 c1">'todo_list'</span><span class="c0 c5 c2">);</span></p>
+                    <p class="c7"><span class="c0 c5 c6">&nbsp; &nbsp; }</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="c12 c21"><span class="c9 c5"></span></p>
+    <p class="c12"><span class="c9 c5">This should be the final step in your Todolist project. Now you should have a full CRUD application in the Symfony PHP framework! Congrats! </span></p>
+    <p class="c21 c36"><span class="c5 c6 c26"></span></p>
+</div></div></div><div class="modified">Last modified: Wednesday, 11 July 2018, 10:24 AM</div></div>                </section>
+                <aside id="block-region-side-pre" class="span4 desktop-first-column block-region" data-droptarget="1" data-blockregion="side-pre">
+    
+</aside>            </div>
+        </div>
+        <aside id="block-region-side-post" class="span3 pull-right block-region" data-droptarget="1" data-blockregion="side-post">
+    
+</aside>    </div>
+
+</div>
+
+<footer id="page-footer">
+    <div class="container-fluid">
+        <div id="course-footer"></div>
+        <div class="footnote text-center"><div class="text_to_html"><p><span style="color:#ffffff;">© 2017  <a style="color:#ffffff;" href="http://www.codefactory.wien//">CodeFactory Vienna</a>  |  <a style="color:#ffffff;" href="http://www.codefactory.wien/impressum/">Impressum</a></span></p></div></div><div class="logininfo">You are logged in as <a href="https://lms.codefactory.wien/user/profile.php?id=110" title="View profile">Matthias Liszt</a> <small><a class="link-as-button" href="https://lms.codefactory.wien/login/logout.php?sesskey=B6XgvhYYhu">Log out</a></small></div>        <div class="footer-powered">Powered by <a href="http://www.totaralms.com/" target="_blank">Totara LMS</a></div>
+            </div>
+</footer>
+
+    <script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://lms.codefactory.wien/lib/requirejs.php/1502183339/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://lms.codefactory.wien/lib/javascript.php/1502183339/lib/jquery/jquery-2.2.1.min',
+        jqueryui: 'https://lms.codefactory.wien/lib/javascript.php/1502183339/lib/jquery/ui-1.11.4/jquery-ui.min',
+        jqueryprivate: 'https://lms.codefactory.wien/lib/javascript.php/1502183339/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="https://lms.codefactory.wien/lib/javascript.php/1502183339/lib/requirejs/require.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+require(['core/first'], function() {
+;
+
+    require(['totara_core/totaramenu', 'core/log'], function(totaraMenu, logging) {
+    totaraMenu.setFocus('#totaramenu');
+    logging.debug('Totara menu initialised');
+    });
+;
+require(["core/log"], function(amd) { amd.setConfig({"level":"warn"}); });
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+M.yui.add_module({"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.mathjax.org\/mathjax\/2.5-latest\/MathJax.js?delayStartupUntil=configured"}});
+
+//]]>
+</script>
+<script type="text/javascript" src="https://lms.codefactory.wien/theme/javascript.php/customtotararesponsive/1523912099/footer"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","uploadformlimit":"Uploaded file {$a} exceeded the maximum size limit set by the form","droptoupload":"Drop files here to upload","maxfilesreached":"You are allowed to attach a maximum of {$a} file(s) to this item","dndenabled_inbox":"You can drag and drop files here to add them.","fileexists":"There is already a file called {$a}","maxbytesforfile":"The file {$a} is larger than the maximum size allowed.","maxareabytesreached":"The file (or the total size of several files) is larger than the space remaining in this area.","viewallcourses":"View all courses","morehelp":"More help","loadinghelp":"Loading...","cancel":"Cancel","yes":"Yes","confirm":"Confirm","no":"No","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} alias\/shortcut files that use this file as their source","select":"Select"},"error":{"serverconnection":"Error connecting to the server"},"admin":{"accessdenied":"Access denied","resourcenotfound":"Resource not found","confirmation":"Confirmation"},"core":{"unknownerror":"Unknown error"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var navtreeexpansions8 = [{"id":"expandable_branch_30_934","key":"934","type":30},{"id":"expandable_branch_30_935","key":"935","type":30},{"id":"expandable_branch_0_mycourses","key":"mycourses","type":0}];
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {M.util.load_flowplayer();
+setTimeout("fix_column_widths()", 20);
+Y.use("moodle-core-jqueryajaxhandler",function() {M.core.jqueryajaxhandler.init();
+});
+Y.use("moodle-block_navigation-navigation",function() {M.block_navigation.init_add_tree({"id":"8","instance":"8","candock":false,"courselimit":"20","expansionlimit":0});
+});
+Y.use("moodle-block_navigation-navigation",function() {M.block_navigation.init_add_tree({"id":"9","instance":"9","candock":false});
+});
+M.util.help_popups.setup(Y);
+Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+M.util.init_skiplink(Y);
+Y.use("moodle-core-actionmenu",function() {M.core.actionmenu.init();
+});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"en"});
+});
+ M.util.js_pending('random5b4c99e33f2aa3'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5b4c99e33f2aa3'); });
+})();
+//]]>
+</script>
+
+</body>
+</html>
